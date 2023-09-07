@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --maincolor : #0E5475 ;
+    --secondarycolor : #F6921E ;
+    --lightcolor : #fff ;
+}
+
+body{
+    background: var(--lightcolor);
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+    cursor: pointer;
+}
+.section{
+    padding: 4rem 0 2rem;
+}
+
+.container{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.icon{
+    font-size:1.3rem ;
+}
+
+
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+.grid{
+    display: grid;
+    align-items: center;
+}
+
+.none{
+    display: none;
+}
+
+.btn{
+    padding: .7rem 1.5rem ;
+    background: var(--secondarycolor);
+    border: none;
+    outline: none;
+    border: 5px;
+    cursor: pointer;
+    color: var(--lightcolor);
+    border-radius: 10px;
+
+    a{
+        color: var(--lightcolor);
+        font-weight: 400;
+    }
+
+    &:hover{
+        background: var(--maincolor) ;
+    }
+}
+
+img,video{
+    width: 100%;
+    height: auto;
+}
+
+input{
+    font-size: 100%;
+    color: var(--maincolor);
+}
+
+p{
+    font-size: 13px;
+    color: var(--maincolor);
+    line-height:22px ;
+}
+
+h4{
+    padding: 1rem 0;
+    font-weight: 700;
+    color: var(--maincolor);
+}
+
+h2{
+    font-size: 25px;
+    padding: 1rem 0;
+    color: var(--maincolor);
+}
+
+/* =============> PublicNavBar =============*/
+
+.navBar{
+    position: fixed;
+    flex-direction: column;
+    width: 100%;
+    z-index: 1000;
+
+
+    .navBartTwo{
+        justify-content: space-between;
+        padding: 1rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        top: 3rem;
+        padding: 1.5rem 1rem;
+        position: fixed;
+        transition: .3s ease-in-out; 
+
+        .logoDiv{
+            .Logo{
+                width: 60%;
+                padding-left: 4rem;
+            }
+        }
+
+        .btnTwo{
+            background:none;
+            color: var(--maincolor);
+            font-weight: 300;
+            &:hover{
+                color: var(--secondarycolor);
+            }
+        }
+
+        @media screen and (max-width:768px){
+            .navBarMenu{
+                position: absolute;
+                background: var(--maincolor);
+                padding: 1.5rem;
+                border-radius: 10px;
+                top: 5rem;
+                right: -50%;
+                width: 80%;
+                transform: translateX(50%);
+                z-index: 2000;
+                box-shadow: rgba(0,0,0,0.1)0px 10px 15px -3px, rgba(0,0,0,0.05) 0px 4px 6px -2px;
+                border: 3px solid var(--lightcolor);
+                transition: .2s ease-in-out;
+                
+                
+
+                .Menu{
+                    flex-direction: column;
+                    gap: .5rem;
+                    text-align: center;
+                    font-weight: 300;
+                    
+
+                    .listItem{
+                        padding: .5rem 0;
+                        cursor: pointer;
+                        color: var(--lightcolor);
+                        
+
+                        &:hover{
+                            color: var(--secondarycolor);
+                            font-weight: 700;
+                        }
+
+                    }
+                }
+
+                .btnTwo{
+                    background:none;
+                    color: var(--lightcolor);
+                    font-weight: 300;
+                    &:hover{
+                        color: var(--secondarycolor);
+                        font-weight: 700;
+                    }
+                }
+
+                .btnOne, .btnTwo{
+                    display: block;
+                    justify-content: center;
+                    margin: auto;
+                    margin-top: 1rem;
+                }
+
+            }
+        }
+
+        .toggleIcon{
+            .icon{
+                font-size: 30px;
+                color: var(--maincolor);
+            }
+        }
+
+        .showNavBar{
+            right: 50%;
+            transition: .5s ease-in-out;
+        }
+    }
+}
+
+/* =============> responsive media query =============*/
+@media screen and (min-width: 768px){
+    /* =============> navbar Section styling =============*/
+
+.navBar{
+   align-items: center; 
+    .navBartTwo{
+        justify-content: space-between;
+        align-items: center;
+
+        .logoDiv{
+            .Logo{
+                max-width: 100%;
+            }
+        }
+
+        .navBarMenu{
+            margin-right: 5rem;
+        }
+
+        .Menu{
+            flex-direction: row;
+            gap: .5rem;
+
+           
+            .listItem{
+                padding: 0 .5rem;
+                font-size: 14px;
+                cursor: pointer;
+                color: var(--maincolor);
+                font-weight: 400;
+
+                &:hover{
+                    color: var(--secondarycolor);
+                    font-weight: 400;
+                }
+            }
+        }
+        
+        .toggleIcon{
+            display: none;
+        }
+    }
+}
+}
+
+
+
+
